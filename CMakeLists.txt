@@ -44,7 +44,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     endif()
 else()
     target_compile_definitions(vmaware_static PUBLIC __VMAWARE_RELEASE__)
-    target_compile_options(vmaware_static PRIVATE $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-O2 -march=native>)
+    target_compile_options(vmaware_static PRIVATE $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-O2>)
     target_compile_options(vmaware_static PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/O2>)
 endif()
 
